@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "951811331674",
+    "project_id": "pool-chat-7e0f1",
+    "storage_bucket": "pool-chat-7e0f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:951811331674:android:9b2e03ea6f204463792a63",
+        "android_client_info": {
+          "package_name": "com.example.pool_chat_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "951811331674-lno84c85flksad8c9fkbgb2826mq05up.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFZYigtiEUkXU8xBYl_xLRfkSEHl6gIR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "951811331674-lno84c85flksad8c9fkbgb2826mq05up.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

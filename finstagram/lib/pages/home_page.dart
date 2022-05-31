@@ -1,3 +1,5 @@
+import 'package:finstagram/pages/feed_page.dart';
+import 'package:finstagram/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,12 +15,8 @@ class _HomePageState extends State<HomePage> {
   int _currentPage = 0;
 
   final List<Widget> _pages = [
-    Container(
-      color: Colors.teal,
-    ),
-    Container(
-      color: Colors.blue,
-    ),
+    const FeedPage(),
+    const ProfilePage(),
   ];
 
   @override
