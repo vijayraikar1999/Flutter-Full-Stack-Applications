@@ -1,7 +1,8 @@
+import 'package:finstagram/pages/home_page.dart';
 import 'package:finstagram/pages/register_page.dart';
+import 'package:finstagram/services/firebase_service.dart';
 import 'package:flutter/material.dart';
-
-import 'home_page.dart';
+import 'package:get_it/get_it.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -15,10 +16,18 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   Size? size;
 
+  FirebaseService? _firebaseService;
+
   final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
 
   String? _email;
   String? _password;
+
+  @override
+  void initState() {
+    super.initState();
+    _firebaseService = GetIt.instance.get<FirebaseService>();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -143,10 +152,19 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  void _loginUser() {
-    print(_loginFormKey.currentState!.validate());
+  void _loginUser() async {
     if (_loginFormKey.currentState!.validate()) {
-      Navigator.pushNamed(context, HomePage.id);
+      _loginFormKey.currentState!.save();
+      bool _result = await _firebaseService!.loginUser(
+        email: _email!,
+        password: _password!,
+      );
+      if (_result) {
+        Navigator.popAndPushNamed(
+          context,
+          HomePage.id,
+        );
+      }
     }
   }
 }
